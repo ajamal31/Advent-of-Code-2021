@@ -3,7 +3,7 @@ import os
 current_dir = os.getcwd()
 file_name = 'Part1Input.txt'
 
-f = open(f'{current_dir}/Day1/{file_name}')
+f = open(f'{current_dir}\\{file_name}')
 data = [*map(int, f.read().split())]
 f.close()
 
