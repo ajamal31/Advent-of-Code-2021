@@ -1,4 +1,3 @@
-from typing import Coroutine
 import requests
 from collections import defaultdict
 
@@ -17,18 +16,15 @@ lines = resp.text
 # lines = lines.split('\n')
 # Sample input --------------------------
 
-counts = defaultdict(int)
+DAYS = 256
 
 data = [*map(int, lines.split(','))]
-counts = defaultdict(int)
-
-for i in range(9):
-    counts[i] = 0
+counts = defaultdict(int, {key: 0 for key in range(9)})
 
 for num in data:
     counts[num] += 1
 
-for j in range(256):
+for j in range(DAYS):
     cur_counts = list(counts.values())
     for i in range(0, 9):
         if i == 8:
