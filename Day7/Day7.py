@@ -8,14 +8,14 @@ def min_fuel_needed(is_constant_rate):
     result = []
 
     for i in range(len(data)):
-        s = 0
+        fuel_needed = 0
         for j in range(len(data)):
-            n = abs(i - data[j])
+            distance = abs(data[i] - data[j])
             if is_constant_rate:
-                s += n
+                fuel_needed += distance
             else:
-                s += n * (n + 1) // 2
-        result.append(s)
+                fuel_needed += distance * (distance + 1) // 2
+        result.append(fuel_needed)
 
     return min(result)
 
